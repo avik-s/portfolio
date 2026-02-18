@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datara AI | Avik Solanki</title>
+    <meta name="description"
+        content="Deep dive into Avik Solanki's work at Datara AI — building a full-stack dataset management platform with React, Flask, Azure, and Cosmos DB.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .project-content {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--card-shadow);
+        }
+
+        .project-section {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .feature-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--interactive);
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.9em;
+            color: var(--text-primary);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container navbar-content">
+            <a href="../index.html" class="logo">Avik Solanki</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../experience.html" class="nav-link active">Experience</a></li>
+                    <li><a href="../projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="../resume.html" class="nav-link">Resume</a></li>
+                    <li><a href="../contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container grid-12" style="padding-top: var(--header-height);">
+        <div class="col-main" style="padding-top: var(--spacing-md);">
+            <a href="../experience.html" class="back-link">← Back to Experience</a>
+
+            <section style="text-align: center; margin-bottom: var(--spacing-lg);">
+                <h1 style="font-size: 3rem; margin-bottom: 0.5rem;">Datara AI</h1>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); font-family: var(--font-sans);">Hierarchical
+                    Dataset Management & Visualization Platform</p>
+                <div class="tech-stack" style="justify-content: center; margin-top: 1.5rem;">
+                    <span class="tech-tag">React.js</span>
+                    <span class="tech-tag">Flask</span>
+                    <span class="tech-tag">Azure Blob</span>
+                    <span class="tech-tag">Cosmos DB</span>
+                    <span class="tech-tag">OpenCV</span>
+                </div>
+            </section>
+
+            <div class="project-content fade-in-section">
+
+                <div class="project-section">
+                    <p style="font-size: 1.1rem; line-height: 1.7;">
+                        Designed and built a full-stack data management platform for computer vision workflows. The
+                        system enables users to upload, organize, and visualize large-scale image datasets
+                        hierarchically (Category > Brand > Dataset), providing a seamless interface for managing assets
+                        stored in Azure Blob Storage and indexed in Cosmos DB.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h3>Core Key Features</h3>
+
+                    <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">1. Hierarchical
+                        Data Explorer</h4>
+                    <ul class="feature-list">
+                        <li><strong>Dynamic Navigation:</strong> Implemented a file-system-like browser that allows
+                            users to traverse deep directory structures (e.g., <code>automotive/bmw/frontGrille</code>).
+                        </li>
+                        <li><strong>Hybrid View System:</strong> Automatically switches between a "Folder Grid" view for
+                            navigation and an "Image Grid" view for leaf-level dataset inspection.</li>
+                        <li><strong>Breadcrumb Navigation:</strong> Interactive breadcrumbs for quick traversal back up
+                            the hierarchy.</li>
+                        <li><strong>Lazy Loading & Infinite Scroll:</strong> Optimized performance for viewing folders
+                            with thousands of images using virtualization.</li>
+                    </ul>
+
+                    <h4 style="font-size: 1.1rem; color: var(--text-primary); margin: 1.5rem 0 0.5rem;">2. Dual-Mode
+                        Upload Pipeline</h4>
+                    <ul class="feature-list">
+                        <li><strong>Video Processing:</strong> Built a pipeline that accepts Google Drive video links,
+                            automatically downloads them, extracts frames at specified intervals (FPS), and uploads them
+                            as a new dataset.</li>
+                        <li><strong>Folder Ingestion:</strong> Implemented a "Folder Upload" feature that ingests entire
+                            folders of images from Google Drive, flattens the directory structure, and automatically
+                            standardizes filenames.</li>
+                        <li><strong>Automated Metadata Indexing:</strong> Every upload automatically generates metadata
+                            records in Azure Cosmos DB (timestamps, resolution, file paths, tags).</li>
+                    </ul>
+
+                    <h4 style="font-size: 1.1rem; color: var(--text-primary); margin: 1.5rem 0 0.5rem;">3. Advanced
+                        UI/UX</h4>
+                    <ul class="feature-list">
+                        <li><strong>Modern Dark Interface:</strong> Designed a premium, dark-themed UI using Tailwind
+                            CSS, featuring glassmorphism effects and hover interactions.</li>
+                        <li><strong>Metadata Overlay:</strong> Interactive sidebar and image overlays that display
+                            critical asset information (UUIDs, dimensions, tags).</li>
+                        <li><strong>Filtering & Tagging:</strong> Built systems to filter datasets by custom tags and
+                            date ranges.</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h3>Tech Stack</h3>
+                    <div class="grid-2" style="gap: 2rem;">
+                        <div>
+                            <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Frontend
+                            </h4>
+                            <ul class="feature-list">
+                                <li><strong>React.js (Vite):</strong> Core framework for a fast, responsive SPA.</li>
+                                <li><strong>Tailwind CSS:</strong> Utility-first styling for rapid custom design.</li>
+                                <li><strong>Lucide React:</strong> Consistent and clean iconography.</li>
+                                <li><strong>React Router:</strong> Handling nested routing for navigation.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Backend &
+                                Cloud</h4>
+                            <ul class="feature-list">
+                                <li><strong>Python (Flask):</strong> REST API server handling data requests.</li>
+                                <li><strong>Azure Blob Storage:</strong> Scalable object storage for raw images.</li>
+                                <li><strong>Azure Cosmos DB:</strong> NoSQL database for querying metadata.</li>
+                                <li><strong>OpenCV & FFmpeg:</strong> Background scripts for media processing.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+                <a href="../experience.html" class="back-link">← Back to Experience</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer container grid-12" style="border-top: none;">
+        <div class="col-main"
+            style="border-top: 1px solid var(--border); padding-top: var(--spacing-lg); display: flex; justify-content: space-between; align-items: center;">
+            <p>&copy; 2026 Avik Solanki</p>
+            <div style="display: flex; gap: 1.25rem;">
+                <a href="https://linkedin.com/in/avik-s" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                    style="color: var(--text-secondary); font-size: 1.2rem; transition: color 0.2s;"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/avik-s" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                    style="color: var(--text-secondary); font-size: 1.2rem; transition: color 0.2s;"><i
+                        class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

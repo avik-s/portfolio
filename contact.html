@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with Avik Solanki - Computer Engineering student at UIUC.">
+    <title>Contact | Avik Solanki</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            background: var(--glass-bg);
+            text-decoration: none;
+            transition: all var(--transition-smooth);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            border-color: var(--accent);
+        }
+
+        .contact-card i {
+            font-size: 1.4rem;
+            color: var(--accent);
+            width: 2rem;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .contact-card-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-card-label {
+            font-family: var(--font-sans);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-card-value {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 600px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container navbar-content">
+            <a href="index.html" class="logo" aria-label="Avik Solanki - Home">Avik Solanki</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="experience.html" class="nav-link" aria-label="View Experience">Experience</a></li>
+                    <li><a href="projects.html" class="nav-link" aria-label="View Projects">Projects</a></li>
+                    <li><a href="resume.html" class="nav-link" aria-label="View Resume">Resume</a></li>
+                    <li><a href="contact.html" class="nav-link active" aria-label="View Contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container grid-12" style="padding-top: var(--header-height);">
+        <section class="section col-main fade-in-section">
+            <h2 class="section-title">Contact</h2>
+            <p style="max-width: 550px;">Feel free to reach out — whether it's about an opportunity, a project, or just
+                to connect.</p>
+
+            <div class="contact-grid">
+                <a href="mailto:aviksolanki07@gmail.com" class="contact-card" aria-label="Email Avik Solanki">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="contact-card-text">
+                        <span class="contact-card-label">Email</span>
+                        <span class="contact-card-value">aviksolanki07@gmail.com</span>
+                    </div>
+                </a>
+
+                <a href="tel:5109538562" class="contact-card" aria-label="Call Avik Solanki">
+                    <i class="fa-solid fa-phone"></i>
+                    <div class="contact-card-text">
+                        <span class="contact-card-label">Phone</span>
+                        <span class="contact-card-value">510-953-8562</span>
+                    </div>
+                </a>
+
+                <a href="https://linkedin.com/in/avik-s" target="_blank" rel="noopener noreferrer" class="contact-card"
+                    aria-label="Avik Solanki on LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <div class="contact-card-text">
+                        <span class="contact-card-label">LinkedIn</span>
+                        <span class="contact-card-value">linkedin.com/in/avik-s</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/avik-s" target="_blank" rel="noopener noreferrer" class="contact-card"
+                    aria-label="Avik Solanki on GitHub">
+                    <i class="fa-brands fa-github"></i>
+                    <div class="contact-card-text">
+                        <span class="contact-card-label">GitHub</span>
+                        <span class="contact-card-value">github.com/avik-s</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer container grid-12" style="border-top: none;">
+        <div class="col-main"
+            style="border-top: 1px solid var(--border); padding-top: var(--spacing-lg); display: flex; justify-content: space-between; align-items: center;">
+            <p>&copy; 2026 Avik Solanki</p>
+            <div style="display: flex; gap: 1.25rem;">
+                <a href="https://linkedin.com/in/avik-s" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                    style="color: var(--text-secondary); font-size: 1.2rem; transition: color 0.2s;"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/avik-s" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                    style="color: var(--text-secondary); font-size: 1.2rem; transition: color 0.2s;"><i
+                        class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

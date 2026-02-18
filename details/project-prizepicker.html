@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrizePicker | Avik Solanki</title>
+    <meta name="description"
+        content="Deep dive into Avik Solanki's PrizePicker project — a high-performance prop betting analyzer using Python, Flask, Selenium, and Monte Carlo simulations.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .project-content {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--card-shadow);
+        }
+
+        .project-section {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .feature-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--interactive);
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.9em;
+            color: var(--text-primary);
+        }
+
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-family: var(--font-mono);
+        }
+
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container navbar-content">
+            <a href="../index.html" class="logo">Avik Solanki</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../experience.html" class="nav-link">Experience</a></li>
+                    <li><a href="../projects.html" class="nav-link active">Projects</a></li>
+                    <li><a href="../resume.html" class="nav-link">Resume</a></li>
+                    <li><a href="../contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container grid-12" style="padding-top: var(--header-height);">
+        <div class="col-main" style="padding-top: var(--spacing-md);">
+            <a href="../projects.html" class="back-link">← Back to Projects</a>
+
+            <section style="text-align: center; margin-bottom: var(--spacing-lg);">
+                <h1 style="font-size: 3rem; margin-bottom: 0.5rem;">PrizePicker</h1>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); font-family: var(--font-sans);">Prop Betting
+                    Analyzer & Parlay Generator</p>
+
+                <div class="tech-stack" style="justify-content: center; margin-top: 1.5rem;">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Flask</span>
+                    <span class="tech-tag">Selenium</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">Monte Carlo</span>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <a href="https://github.com/avik-s/PrizePicker" target="_blank" class="contact-link"
+                        style="display: inline-flex; justify-content: center; border-bottom: 1px solid var(--text-primary);">
+                        View on GitHub ↗
+                    </a>
+                </div>
+            </section>
+
+            <div class="project-content fade-in-section">
+                <div class="project-section">
+                    <p style="font-size: 1.1rem; line-height: 1.7;">
+                        PrizePicker is a high-performance <strong>Prop Betting Analyzer & Parlay Generator</strong>. It
+                        leverages real-time sports data to identify +EV (Expected Value) opportunities by comparing
+                        PrizePicks lines against "Fair Odds" (vig-removed) derived from major sportsbooks like FanDuel.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h3>Technical Breakdown</h3>
+
+                    <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Data Extraction
+                        Pipeline</h4>
+                    <p
+                        style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
+                        Engineered an automated extraction pipeline with Python and Selenium to scrape real-time player
+                        prop odds across sportsbooks. The scraper bypasses dynamic DOM loading and anti-bot detection
+                        mechanisms to ingest thousands of data points across multiple markets (Points, Rebounds,
+                        Assists,
+                        3-Pointers, and more) for both NBA and NFL.
+                    </p>
+
+                    <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Fault-Tolerant
+                        Ingestion</h4>
+                    <p
+                        style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
+                        Architected the pipeline with automated session recovery to handle failures gracefully.
+                        The system mitigates data loss from asynchronous DOM updates and network interruptions,
+                        ensuring near-100% capture of available player props across all targeted markets.
+                    </p>
+
+                    <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Statistical
+                        Arbitrage Engine</h4>
+                    <p
+                        style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
+                        Developed an algorithm that cross-references lines between sportsbooks (e.g., FanDuel vs.
+                        PrizePicks)
+                        to detect line discrepancies. It removes the bookmaker's vig to calculate true "fair" win
+                        probabilities, then identifies bets where the Expected Value (+EV) exceeds the break-even
+                        threshold. Optimal slips are generated using Monte Carlo sampling for larger parlays and
+                        exhaustive combinatorial analysis for high-conviction 2-man pairings.
+                    </p>
+
+                    <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Full-Stack
+                        Dashboard</h4>
+                    <p
+                        style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
+                        Built a responsive web dashboard using Flask and HTML/CSS to visualize the data in real-time.
+                        The UI features dynamic "slip" generation, directional OVER/UNDER indicators, win probability
+                        badges, and filtering controls — designed to streamline real-time decision making.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h3>Tech Stack</h3>
+                    <ul class="feature-list">
+                        <li><strong>Backend:</strong> Python, Flask</li>
+                        <li><strong>Scraping:</strong> Selenium, Pandas</li>
+                        <li><strong>Logic:</strong> Monte Carlo Simulations, Itertools</li>
+                        <li><strong>Frontend:</strong> HTML5, Vanilla CSS</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h3>How it Works</h3>
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <img src="../assets/img/prizepicks_thresholds.png" alt="PrizePicks +EV Thresholds"
+                            style="max-width: 100%; border-radius: var(--radius-md); box-shadow: var(--card-shadow);">
+                    </div>
+                    <ul class="feature-list">
+                        <li><strong>Vig Removal:</strong> Sportsbooks like FanDuel build a profit margin (called the
+                            "vig" or "juice") into their odds, which means the listed probabilities always add up to
+                            more than 100%. This system strips out that margin to reveal the true "fair" win probability
+                            for each side of a bet — giving you an unbiased view of how likely an outcome really is.
+                        </li>
+                        <li><strong>Line Comparison:</strong> PrizePicks and FanDuel sometimes set different statistical
+                            lines for the same player prop (e.g., "LeBron Over 25.5 Points" vs. "Over 26.0 Points").
+                            The system compares these lines and, when they're identical or very close (within 0.5),
+                            uses the fair probability from FanDuel to evaluate whether the PrizePicks bet has a
+                            mathematical edge.</li>
+                        <li><strong>Threshold Filtering:</strong> On PrizePicks, each parlay size has a specific
+                            break-even win rate you need to beat to be profitable (for example, a 6-pick Flex parlay
+                            requires each leg to hit at least ~54.21% of the time). The system only keeps bets where
+                            the calculated fair probability exceeds that threshold — meaning every selected bet has a
+                            positive Expected Value (+EV).</li>
+                        <li><strong>Diversity Rule:</strong> PrizePicks requires that parlays contain unique players and
+                            span multiple teams. The slip generator enforces these constraints automatically, so every
+                            recommended parlay is valid and ready to play without manual checking.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+            <a href="../projects.html" class="back-link">← Back to Projects</a>
+        </div>
+        </div>
+    </main>
+
+    <footer class="footer container grid-12" style="border-top: none;">
+        <div class="col-main"
+            style="border-top: 1px solid var(--border); padding-top: var(--spacing-lg); display: flex; justify-content: space-between; align-items: center;">
+            <p>&copy; 2026 Avik Solanki</p>
+            <div style="display: flex; gap: 1.25rem;">
+                <a href="https://linkedin.com/in/avik-s" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                    style="color: var(--text-secondary); font-size: 1.2rem; transition: color 0.2s;"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/avik-s" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                    style="color: var(--text-secondary); font-size: 1.2rem; transition: color 0.2s;"><i
+                        class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

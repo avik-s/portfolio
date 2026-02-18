@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Avik Solanki</title>
+    <meta name="description"
+        content="Explore Avik Solanki's engineering projects spanning full-stack web apps, autonomous robotics, and deep learning computer vision pipelines.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container navbar-content">
+            <a href="index.html" class="logo" aria-label="Avik Solanki - Home">Avik Solanki</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="experience.html" class="nav-link" aria-label="View Experience">Experience</a></li>
+                    <li><a href="projects.html" class="nav-link active" aria-label="View Projects">Projects</a></li>
+                    <li><a href="resume.html" class="nav-link" aria-label="View Resume">Resume</a></li>
+                    <li><a href="contact.html" class="nav-link" aria-label="View Contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container grid-12" style="padding-top: var(--header-height);">
+        <section class="section col-main fade-in-section">
+            <h2 class="section-title">Projects</h2>
+
+            <div class="grid-2">
+                <!-- Project 1 -->
+                <a href="details/project-prizepicker.html" class="card project-card"
+                    style="display: block; text-decoration: none;" aria-label="View PrizePicker project details">
+                    <div class="card-header">
+                        <small class="card-subtitle">Prop Betting Analyzer</small>
+                        <h3 class="card-title">PrizePicker</h3>
+                        <p
+                            style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.5rem; line-height: 1.5;">
+                            Scrapes real-time sportsbook odds, removes the vig to calculate fair probabilities, and
+                            generates optimal parlay slips using Monte Carlo sampling.
+                        </p>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">Selenium</span>
+                        <span class="tech-tag">Pandas</span>
+                    </div>
+                </a>
+
+                <!-- Project 2 -->
+                <a href="details/project-sorting-system.html" class="card project-card"
+                    style="display: block; text-decoration: none;" aria-label="View Auto Sorter project details">
+                    <div class="card-header">
+                        <small class="card-subtitle">Robotics</small>
+                        <h3 class="card-title">Automatic Sorting System</h3>
+                        <p
+                            style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.5rem; line-height: 1.5;">
+                            Autonomous marble sorting system using motor control and real-time color sensing.
+                        </p>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python (VEX)</span>
+                        <span class="tech-tag">Robotics</span>
+                        <span class="tech-tag">Motor Control</span>
+                    </div>
+                </a>
+
+                <!-- Project 3 -->
+                <a href="details/project-distracted-driver.html" class="card project-card"
+                    style="display: block; text-decoration: none;" aria-label="View Driver AI project details">
+                    <div class="card-header">
+                        <small class="card-subtitle">Computer Vision</small>
+                        <h3 class="card-title">Distracted Driver Detection</h3>
+                        <p
+                            style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.5rem; line-height: 1.5;">
+                            Real-time CNN pipeline to detect and classify distracted driving behaviors.
+                        </p>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">CNNs</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer container grid-12" style="border-top: none;">
+        <div class="col-main"
+            style="border-top: 1px solid var(--border); padding-top: var(--spacing-lg); display: flex; justify-content: space-between; align-items: center;">
+            <p>&copy; 2026 Avik Solanki</p>
+            <div style="display: flex; gap: 1.25rem;">
+                <a href="https://linkedin.com/in/avik-s" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                    style="color: var(--text-secondary); font-size: 1.2rem; transition: color 0.2s;"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/avik-s" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                    style="color: var(--text-secondary); font-size: 1.2rem; transition: color 0.2s;"><i
+                        class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

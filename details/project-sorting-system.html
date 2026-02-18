@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Sorting System | Avik Solanki</title>
+    <meta name="description"
+        content="Deep dive into Avik Solanki's Automated Sorting System — an autonomous mechanical marble sorter using VEX V5 hardware, custom 3D printing, optical sensors, and Python.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .project-content {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--card-shadow);
+        }
+
+        .project-section {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .feature-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--interactive);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container navbar-content">
+            <a href="../index.html" class="logo">Avik Solanki</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../experience.html" class="nav-link">Experience</a></li>
+                    <li><a href="../projects.html" class="nav-link active">Projects</a></li>
+                    <li><a href="../resume.html" class="nav-link">Resume</a></li>
+                    <li><a href="../contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container grid-12" style="padding-top: var(--header-height);">
+        <div class="col-main" style="padding-top: var(--spacing-md);">
+            <a href="../projects.html" class="back-link">← Back to Projects</a>
+
+            <section style="text-align: center; margin-bottom: var(--spacing-lg);">
+                <h1 style="font-size: 3rem; margin-bottom: 0.5rem;">Automated Sorting System</h1>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); font-family: var(--font-sans);">Autonomous
+                    Mechanical Marble Sorter</p>
+                <div class="tech-stack" style="justify-content: center; margin-top: 1.5rem;">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">VEX V5</span>
+                    <span class="tech-tag">3D Printing</span>
+                    <span class="tech-tag">Optical Sensors</span>
+                </div>
+            </section>
+
+            <div class="project-content fade-in-section">
+
+                <div class="project-section">
+                    <p style="font-size: 1.1rem; line-height: 1.7;">
+                        I designed and assembled an autonomous sorting system capable of identifying and
+                        categorizing marbles based on optical properties. The core engineering challenge involved
+                        integrating standard VEX components with a custom 3D-printed part to manage sensor data
+                        and motor control logic reliably.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h3>Technical Breakdown</h3>
+
+                    <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Mechanical Design
+                    </h4>
+                    <p
+                        style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
+                        Constructed the chassis using VEX V5 structural components and integrated a custom 3D-printed
+                        component to optimize the mechanism. I utilized a gravity-fed hopper (repurposed bottle) and a
+                        rotating distribution arm powered by a high-torque V5 Smart Motor to route marbles into one of
+                        four designated collection bins.
+                    </p>
+
+                    <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Sensor Integration
+                    </h4>
+                    <p
+                        style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
+                        Utilized a VEX Optical Sensor to detect hue, saturation, and brightness. I developed a
+                        calibration script in Python to account for ambient light variations, ensuring the sensor could
+                        distinguish between similar shades and translucent vs. opaque materials.
+                    </p>
+
+                    <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Software & Control
+                    </h4>
+                    <ul class="feature-list">
+                        <li><strong>Singulation Logic:</strong> Programmed a timing-based gate system to ensure only one
+                            marble was processed at a time, preventing jams and sensor "noise."</li>
+                        <li><strong>State Machine Architecture:</strong> Implemented a state machine in Python to manage
+                            the system's workflow: Detection → Classification → Mechanical Alignment → Deposit.</li>
+                        <li><strong>Motor Control:</strong> Calibrated motor speed and timing to ensure accurate
+                            positioning
+                            of the sorting tray without the complexity of a full PID loop.</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h3>Key Results</h3>
+                    <ul class="feature-list">
+                        <li><strong>99% Accuracy:</strong> Achieved near-perfect sorting consistency across hundreds of
+                            test cycles.</li>
+                        <li><strong>High-Speed Throughput:</strong> Optimized the mechanical travel path and sensor
+                            polling rate to maximize the number of marbles processed per minute.</li>
+                        <li><strong>Iterative Prototyping:</strong> Transitioned from a basic gravity-fed model to a
+                            motorized precision sorter, solving critical mechanical bottlenecks related to marble
+                            friction and "double-feeding."</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+                <a href="../projects.html" class="back-link">← Back to Projects</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer container grid-12" style="border-top: none;">
+        <div class="col-main"
+            style="border-top: 1px solid var(--border); padding-top: var(--spacing-lg); display: flex; justify-content: space-between; align-items: center;">
+            <p>&copy; 2026 Avik Solanki</p>
+            <div style="display: flex; gap: 1.25rem;">
+                <a href="https://linkedin.com/in/avik-s" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                    style="color: var(--text-secondary); font-size: 1.2rem; transition: color 0.2s;"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/avik-s" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                    style="color: var(--text-secondary); font-size: 1.2rem; transition: color 0.2s;"><i
+                        class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distracted Driver Detection | Avik Solanki</title>
+    <meta name="description"
+        content="Deep dive into Avik Solanki's Distracted Driver Detection project — a real-time CNN pipeline for classifying driver behaviors using TensorFlow and computer vision.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .project-content {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--card-shadow);
+        }
+
+        .project-section {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .feature-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--interactive);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+
+        .stat-card {
+            background: #F8F9FA;
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container navbar-content">
+            <a href="../index.html" class="logo">Avik Solanki</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../experience.html" class="nav-link">Experience</a></li>
+                    <li><a href="../projects.html" class="nav-link active">Projects</a></li>
+                    <li><a href="../resume.html" class="nav-link">Resume</a></li>
+                    <li><a href="../contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container grid-12" style="padding-top: var(--header-height);">
+        <div class="col-main" style="padding-top: var(--spacing-md);">
+            <a href="../projects.html" class="back-link">← Back to Projects</a>
+
+            <section style="text-align: center; margin-bottom: var(--spacing-lg);">
+                <h1 style="font-size: 3rem; margin-bottom: 0.5rem;">Distracted Driver Detection</h1>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); font-family: var(--font-sans);">Real-time
+                    Computer Vision Pipeline</p>
+                <div class="tech-stack" style="justify-content: center; margin-top: 1.5rem;">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">TensorFlow/Keras</span>
+                    <span class="tech-tag">CV</span>
+                    <span class="tech-tag">CNNs</span>
+                </div>
+            </section>
+
+            <div class="project-content fade-in-section">
+
+                <div class="project-section">
+                    <p style="font-size: 1.1rem; line-height: 1.7;">
+                        Developed a sophisticated computer vision pipeline designed to identify and classify distracted
+                        driving behaviors in real-time. The project aimed to mitigate road accidents by categorizing
+                        driver actions into four key states: <strong>Attentive, Drinking Coffee, Looking at Mirrors, and
+                            Adjusting the Radio</strong>.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h3>The Challenge</h3>
+                    <p style="line-height: 1.6; color: var(--text-secondary);">
+                        Distracted driving is categorized into three sectors: visual (eyes off the road), manual (hands
+                        off the wheel), and cognitive (loss of focus). The technical challenge was to build a model
+                        capable of processing complex visual data to distinguish subtle differences between these
+                        distractions with high accuracy.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h3>Development & Methodology</h3>
+                    <p style="margin-bottom: 1.5rem; line-height: 1.6; color: var(--text-secondary);">I led a
+                        comparative analysis of various machine learning models to
+                        find the most effective solution for image classification:</p>
+
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div>
+                            <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Baseline
+                                Models (KNN & Decision Trees)</h4>
+                            <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
+                                Initially implemented K-Nearest Neighbors (KNN) and Decision Trees to establish a
+                                performance baseline. KNN achieved approximately 45% accuracy, while Decision Trees
+                                proved even less effective for high-dimensional image data.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Neural
+                                Networks (MLP)</h4>
+                            <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
+                                Advanced the pipeline using Multi-Layer Perceptrons (MLPs). While better at handling
+                                non-linearly separable data, the accuracy remained limited at ~55%.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Deep
+                                Learning (CNN & Transfer Learning)</h4>
+                            <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
+                                Developed a Convolutional Neural Network (CNN) architecture specifically optimized for
+                                feature extraction from images. To further refine performance, I explored Transfer
+                                Learning, utilizing pre-trained weights to solve the classification problem more
+                                efficiently.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h3>Key Results</h3>
+                    <div class="grid-2" style="margin-bottom: 1.5rem;">
+                        <div class="stat-card">
+                            <span class="stat-value">45% &#8594; 80%</span>
+                            <span class="stat-label">Accuracy Leap</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value">CNN</span>
+                            <span class="stat-label">Top Performing Model</span>
+                        </div>
+                    </div>
+                    <ul class="feature-list">
+                        <li><strong>Performance Leap:</strong> By transitioning from simple classification to CNNs, the
+                            model’s validation accuracy increased from 45% to a peak of 80%.</li>
+                        <li><strong>Optimization:</strong> Iteratively refined model architectures by experimenting with
+                            different combinations of neurons, layers, and epochs to reach optimal performance.</li>
+                        <li><strong>Ethical Framework:</strong> Integrated a comprehensive analysis of the ethical
+                            implications of the tech, addressing user privacy concerns regarding constant surveillance
+                            and the necessity of removing demographic bias from training data.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+                <a href="../projects.html" class="back-link">← Back to Projects</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer container grid-12" style="border-top: none;">
+        <div class="col-main"
+            style="border-top: 1px solid var(--border); padding-top: var(--spacing-lg); display: flex; justify-content: space-between; align-items: center;">
+            <p>&copy; 2026 Avik Solanki</p>
+            <div style="display: flex; gap: 1.25rem;">
+                <a href="https://linkedin.com/in/avik-s" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                    style="color: var(--text-secondary); font-size: 1.2rem; transition: color 0.2s;"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/avik-s" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                    style="color: var(--text-secondary); font-size: 1.2rem; transition: color 0.2s;"><i
+                        class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>
