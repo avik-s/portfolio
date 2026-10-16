@@ -602,6 +602,7 @@ ul {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: var(--spacing-sm);
     margin-top: var(--spacing-md);
     padding: var(--spacing-sm);
@@ -614,7 +615,8 @@ ul {
     display: grid;
     grid-template-columns: repeat(3, minmax(8rem, 1fr));
     gap: var(--spacing-sm);
-    flex: 1;
+    min-width: 0;
+    flex: 1 1 26rem;
 }
 
 .simulator-controls label {
@@ -643,6 +645,7 @@ ul {
 .simulator-actions {
     display: flex;
     flex-wrap: wrap;
+    flex: 0 0 auto;
     gap: 0.65rem;
 }
 
