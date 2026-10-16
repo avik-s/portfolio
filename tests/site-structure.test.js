@@ -10,7 +10,7 @@ describe('PrizePicker page structure', () => {
     expect(prizePickerPage).toContain('id="simulator-sport"');
     expect(prizePickerPage).toContain('id="simulator-style"');
     expect(prizePickerPage).toContain('id="simulator-size"');
-    expect(prizePickerPage).toContain('src="../assets/js/prizepicker-simulator.js"');
+    expect(prizePickerPage).toContain('src="../assets/js/prizepicker-simulator.js?v=20261016-six-leg"');
   });
 
   test('labels the simulator as educational simulated data', () => {

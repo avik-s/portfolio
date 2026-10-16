@@ -1,5 +1,5 @@
-import { SIMULATED_PROPS } from '../data/prizepicker-odds.js';
-import { generateSlips } from './prizepicker-core.js';
+import { SIMULATED_PROPS } from '../data/prizepicker-odds.js?v=20261016-six-leg';
+import { generateSlips } from './prizepicker-core.js?v=20261016-six-leg';
 
 const DEFAULTS = Object.freeze({ sport: 'NBA', style: 'Power', size: '2' });
 
