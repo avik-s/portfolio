@@ -16,7 +16,7 @@ The PrizePicker project page includes a **Simulated Odds Analyzer**. Visitors ch
 4. Filters by the project’s sample thresholds.
 5. Generates ranked slips while enforcing unique players and at least two teams.
 
-The simulator is deterministic and educational. It uses fictional players and fixed sample odds; it does not scrape live data, call an API, place wagers, or guarantee profit.
+The simulator is deterministic and educational. It uses fictional props and fixed sample odds; the public artist names are labels only and do not represent real player data. It does not scrape live data, call an API, place wagers, or guarantee profit.
 
 ## Local setup
 
@@ -41,7 +41,7 @@ The build preserves all current routes, assets, and the `CNAME` custom-domain fi
 
 ## Architecture
 
-- `assets/data/prizepicker-odds.js` contains the fictional, deterministic sample slate.
+- `assets/data/prizepicker-odds.js` contains the fictional, deterministic sample slate; public artist names are used only as labels.
 - `assets/js/prizepicker-core.js` contains the pure odds, vig-removal, filtering, and slip-ranking functions.
 - `assets/js/prizepicker-simulator.js` adapts the core result to the accessible PrizePicker page UI.
 - `tests/` covers probability math, line filtering, slip constraints, empty/error states, UI reset behavior, page structure, and the static build.

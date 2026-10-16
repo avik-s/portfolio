@@ -16,6 +16,7 @@ describe('PrizePicker page structure', () => {
   test('labels the simulator as educational simulated data', () => {
     expect(prizePickerPage).toMatch(/simulated sample data/i);
     expect(prizePickerPage).toMatch(/not live odds|not betting advice/i);
+    expect(prizePickerPage).toMatch(/public artist names are\s+used only as fictional labels/i);
   });
 
   test('uses the capstone feature labels in the portfolio navigation', () => {
