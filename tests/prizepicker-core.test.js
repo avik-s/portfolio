@@ -34,7 +34,7 @@ describe('PrizePicker slip analyzer', () => {
     expect(result.thresholdPct).toBe(57.74);
     expect(result.slips[0].style).toBe('Power');
     expect(result.slips[0].legs.map((leg) => leg.player)).toEqual([
-      'Rowan Elliss',
+      'Rowan Ellis',
       'Nova Carter',
     ]);
     expect(result.slips[0].teams).toHaveLength(2);
