@@ -94,7 +94,7 @@
     <header class="navbar">
         <div class="container navbar-content">
             <a href="/" class="logo">Avik Solanki</a>
-            <button class="hamburger" aria-label="Toggle navigation menu">
+            <button type="button" class="hamburger" aria-label="Toggle navigation menu">
                 <span></span><span></span><span></span>
             </button>
             <nav>
@@ -115,7 +115,7 @@
             <section style="text-align: center; margin-bottom: var(--spacing-lg);">
                 <h1 style="font-size: 3rem; margin-bottom: 0.5rem;">PrizePicker</h1>
                 <p style="font-size: 1.2rem; color: var(--text-secondary); font-family: var(--font-sans);">Prop Betting
-                    Analyzer & Parlay Generator</p>
+                    Analyzer &amp; Parlay Generator</p>
 
                 <div class="tech-stack" style="justify-content: center; margin-top: 1.5rem;">
                     <span class="tech-tag">Python</span>
@@ -136,7 +136,7 @@
             <div class="project-content fade-in-section">
                 <div class="project-section">
                     <p style="font-size: 1.1rem; line-height: 1.7;">
-                        PrizePicker is a high-performance <strong>Prop Betting Analyzer & Parlay Generator</strong>. It
+                        PrizePicker is a high-performance <strong>Prop Betting Analyzer &amp; Parlay Generator</strong>. It
                         leverages real-time sports data to identify +EV (Expected Value) opportunities by comparing
                         PrizePicks lines against "Fair Odds" (vig-removed) derived from major sportsbooks like FanDuel.
                     </p>
@@ -226,6 +226,74 @@
                 </div>
             </div>
 
+            <section id="simulator-root" class="simulator-shell fade-in-section" aria-labelledby="simulator-title">
+                <div class="simulator-heading">
+                    <small class="simulator-kicker">Capstone interaction · Simulated sample data</small>
+                    <h2 id="simulator-title">Run the PrizePicker analyzer</h2>
+                    <p>
+                        Choose a sample slate and slip size to see how PrizePicker filters lines, removes vig, and
+                        assembles a diversified set of high-conviction legs.
+                    </p>
+                    <p class="simulator-disclaimer">
+                        <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                        This is an educational UI demo using fictional players and fixed odds. It is not live odds,
+                        betting advice, or a guarantee of profit.
+                    </p>
+                </div>
+
+                <form id="prizepicker-simulator" class="simulator-form">
+                    <div class="simulator-controls">
+                        <label>
+                            Sport
+                            <select id="simulator-sport" name="sport">
+                                <option value="NBA">NBA sample slate</option>
+                                <option value="NFL">NFL sample slate</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Slip style
+                            <select id="simulator-style" name="style">
+                                <option value="Power">Power</option>
+                                <option value="Flex">Flex</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Picks
+                            <select id="simulator-size" name="size">
+                                <option value="2">2 picks</option>
+                                <option value="3">3 picks</option>
+                                <option value="4">4 picks</option>
+                                <option value="5">5 picks</option>
+                                <option value="6">6 picks</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="simulator-actions">
+                        <button id="simulator-submit" class="btn-primary" type="submit">
+                            Analyze sample slate
+                        </button>
+                        <button id="simulator-reset" class="btn-secondary" type="button">Reset</button>
+                    </div>
+                </form>
+
+                <p id="simulator-status" class="simulator-status" role="status" aria-live="polite">
+                    Ready to analyze the simulated sample slate.
+                </p>
+                <div id="simulator-results" class="simulator-results" aria-live="polite"></div>
+
+                <details class="simulator-methodology">
+                    <summary>How this simulation works</summary>
+                    <p>
+                        The fixed sample slate converts American odds into implied probabilities, normalizes both
+                        sides to remove the sportsbook margin, ignores lines more than 0.5 apart, and ranks slips that
+                        clear the sample threshold. Results also enforce unique players and at least two teams.
+                    </p>
+                </details>
+            </section>
+
             <div style="margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
                 <a href="/projects" class="back-link">← Back to Projects</a>
             </div>
@@ -248,6 +316,7 @@
     </footer>
 
     <script src="../assets/js/script.js"></script>
+    <script type="module" src="../assets/js/prizepicker-simulator.js"></script>
 </body>
 
 </html>

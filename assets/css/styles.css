@@ -36,6 +36,7 @@
 
     /* Transitions */
     --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: 0.2s ease;
 }
 
 /* Reset */
@@ -127,6 +128,14 @@ a {
     text-decoration: none;
     color: inherit;
     transition: color var(--transition-fast);
+}
+
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+    outline: 3px solid rgba(95, 111, 101, 0.35);
+    outline-offset: 3px;
 }
 
 ul {
@@ -538,6 +547,294 @@ ul {
 .featured-card:hover {
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
     transform: translateY(-3px);
+}
+
+.project-interactive-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.55rem;
+    margin: 0.25rem 0 0.4rem;
+    border: 1px solid rgba(95, 111, 101, 0.35);
+    border-radius: 999px;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+}
+
+/* PrizePicker simulator */
+.simulator-shell {
+    margin: var(--spacing-lg) 0;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: var(--card-shadow);
+}
+
+.simulator-heading {
+    max-width: 48rem;
+}
+
+.simulator-heading h2 {
+    margin: 0.55rem 0 0.85rem;
+}
+
+.simulator-kicker {
+    color: var(--accent);
+}
+
+.simulator-disclaimer {
+    display: flex;
+    gap: 0.55rem;
+    align-items: flex-start;
+    margin-bottom: 0;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.simulator-disclaimer i {
+    margin-top: 0.25rem;
+    color: var(--accent);
+}
+
+.simulator-form {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--bg-primary);
+}
+
+.simulator-controls {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(8rem, 1fr));
+    gap: var(--spacing-sm);
+    min-width: 0;
+    flex: 1 1 26rem;
+}
+
+.simulator-controls label {
+    display: grid;
+    gap: 0.45rem;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.simulator-controls select {
+    width: 100%;
+    padding: 0.7rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: white;
+    color: var(--text-primary);
+    font: inherit;
+    font-size: 0.88rem;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.simulator-actions {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 auto;
+    gap: 0.65rem;
+}
+
+.simulator-actions button {
+    cursor: pointer;
+}
+
+.simulator-status {
+    min-height: 1.6rem;
+    margin: var(--spacing-sm) 0;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+}
+
+.simulator-results {
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+.simulator-slip {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: white;
+}
+
+.simulator-slip-header,
+.simulator-slip-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+}
+
+.simulator-slip-header {
+    border-bottom: 1px solid var(--border);
+}
+
+.simulator-slip-header small,
+.simulator-slip-footer,
+.simulator-slip-stat span {
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.simulator-slip-header h3 {
+    margin: 0.35rem 0 0;
+    font-size: 1.3rem;
+}
+
+.simulator-slip-stat {
+    text-align: right;
+}
+
+.simulator-slip-stat strong {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+}
+
+.simulator-legs {
+    display: grid;
+    gap: 0;
+    padding: 0 var(--spacing-sm);
+}
+
+.simulator-leg {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.simulator-leg:last-child {
+    border-bottom: 0;
+}
+
+.simulator-leg strong,
+.simulator-leg span {
+    display: block;
+}
+
+.simulator-leg strong {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.simulator-leg span {
+    margin-top: 0.15rem;
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+}
+
+.simulator-leg .simulator-leg-probability {
+    flex-shrink: 0;
+    margin-top: 0;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+
+.simulator-slip-footer {
+    border-top: 1px solid var(--border);
+    background: var(--bg-primary);
+}
+
+.simulator-slip-footer strong {
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+
+.simulator-empty {
+    padding: var(--spacing-md);
+    border: 1px dashed var(--accent);
+    border-radius: var(--radius-md);
+    background: rgba(95, 111, 101, 0.05);
+}
+
+.simulator-empty h3 {
+    margin: 0.4rem 0;
+    font-size: 1.35rem;
+}
+
+.simulator-empty p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+.simulator-methodology {
+    margin-top: var(--spacing-sm);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.simulator-methodology summary {
+    cursor: pointer;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.simulator-methodology p {
+    margin: 0.75rem 0 0;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 760px) {
+    .simulator-form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .simulator-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .simulator-actions {
+        width: 100%;
+    }
+
+    .simulator-actions button {
+        flex: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+    .fade-in-section {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 /* Resume Download */
