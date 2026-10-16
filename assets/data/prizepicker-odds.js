@@ -1,12 +1,13 @@
 /**
  * A deliberately fictional, deterministic sample slate for the portfolio demo.
+ * Public rapper legal names are used only as fictional labels; these are not real athletes.
  * It is not live data and is never sent to a betting or sportsbook service.
  */
 export const SIMULATED_PROPS = Object.freeze([
   {
     id: 'nba-rowan-rebounds',
     sport: 'NBA',
-    player: 'Rowan Ellis',
+    player: 'Shéyaa Bin Abraham-Joseph',
     team: 'Comets',
     opponent: 'Larks',
     market: 'Rebounds',
@@ -18,7 +19,7 @@ export const SIMULATED_PROPS = Object.freeze([
   {
     id: 'nba-nova-points',
     sport: 'NBA',
-    player: 'Nova Carter',
+    player: 'Jordan Terrell Carter',
     team: 'Larks',
     opponent: 'Comets',
     market: 'Points',
@@ -30,7 +31,7 @@ export const SIMULATED_PROPS = Object.freeze([
   {
     id: 'nba-kai-assists',
     sport: 'NBA',
-    player: 'Kai Mercer',
+    player: 'Sergio Giavanni Kitchens',
     team: 'Orbit',
     opponent: 'Comets',
     market: 'Assists',
@@ -42,7 +43,7 @@ export const SIMULATED_PROPS = Object.freeze([
   {
     id: 'nba-mira-threes',
     sport: 'NBA',
-    player: 'Mira Santos',
+    player: 'Kendrick Lamar Duckworth',
     team: 'Tide',
     opponent: 'Larks',
     market: '3-Pointers',
@@ -54,7 +55,7 @@ export const SIMULATED_PROPS = Object.freeze([
   {
     id: 'nba-eli-points',
     sport: 'NBA',
-    player: 'Eli Brooks',
+    player: 'Aubrey Drake Graham',
     team: 'Tide',
     opponent: 'Orbit',
     market: 'Points',
@@ -66,7 +67,7 @@ export const SIMULATED_PROPS = Object.freeze([
   {
     id: 'nba-nova-assists',
     sport: 'NBA',
-    player: 'Nova Carter',
+    player: 'Jordan Terrell Carter',
     team: 'Larks',
     opponent: 'Comets',
     market: 'Assists',
@@ -78,7 +79,7 @@ export const SIMULATED_PROPS = Object.freeze([
   {
     id: 'nba-line-mismatch',
     sport: 'NBA',
-    player: 'Parker Vale',
+    player: 'Nayvadius DeMun Wilburn',
     team: 'Orbit',
     opponent: 'Tide',
     market: 'Rebounds',
@@ -90,7 +91,7 @@ export const SIMULATED_PROPS = Object.freeze([
   {
     id: 'nba-low-confidence',
     sport: 'NBA',
-    player: 'Sage Kim',
+    player: 'Marshall Bruce Mathers III',
     team: 'Comets',
     opponent: 'Tide',
     market: 'Steals',
@@ -102,7 +103,7 @@ export const SIMULATED_PROPS = Object.freeze([
   {
     id: 'nfl-avery-yards',
     sport: 'NFL',
-    player: 'Avery Quinn',
+    player: 'Jermaine Lamarr Cole',
     team: 'Forge',
     opponent: 'Northstars',
     market: 'Receiving Yards',
@@ -114,7 +115,7 @@ export const SIMULATED_PROPS = Object.freeze([
   {
     id: 'nfl-blake-receptions',
     sport: 'NFL',
-    player: 'Blake Rowan',
+    player: 'Jacques Bermon Webster II',
     team: 'Northstars',
     opponent: 'Forge',
     market: 'Receptions',
@@ -126,7 +127,7 @@ export const SIMULATED_PROPS = Object.freeze([
   {
     id: 'nfl-cameron-rush',
     sport: 'NFL',
-    player: 'Cameron Reed',
+    player: 'Dwayne Michael Carter Jr.',
     team: 'Pilots',
     opponent: 'Forge',
     market: 'Rush Yards',
@@ -138,7 +139,7 @@ export const SIMULATED_PROPS = Object.freeze([
   {
     id: 'nfl-drew-completions',
     sport: 'NFL',
-    player: 'Drew Ellis',
+    player: 'Kanye Omari West',
     team: 'Harbor',
     opponent: 'Pilots',
     market: 'Completions',
@@ -150,7 +151,7 @@ export const SIMULATED_PROPS = Object.freeze([
   {
     id: 'nfl-emery-tackles',
     sport: 'NFL',
-    player: 'Emery Cole',
+    player: 'Shawn Corey Carter',
     team: 'Northstars',
     opponent: 'Harbor',
     market: 'Tackles',
@@ -162,7 +163,7 @@ export const SIMULATED_PROPS = Object.freeze([
   {
     id: 'nfl-line-mismatch',
     sport: 'NFL',
-    player: 'Finley Cruz',
+    player: 'Belcalis Marlenis Almánzar',
     team: 'Forge',
     opponent: 'Pilots',
     market: 'Receiving Yards',
@@ -174,7 +175,7 @@ export const SIMULATED_PROPS = Object.freeze([
   {
     id: 'nfl-low-confidence',
     sport: 'NFL',
-    player: 'Gray Morgan',
+    player: 'Onika Tanya Maraj-Petty',
     team: 'Harbor',
     opponent: 'Northstars',
     market: 'Passing Yards',
@@ -186,7 +187,7 @@ export const SIMULATED_PROPS = Object.freeze([
   {
     id: 'nfl-second-mismatch',
     sport: 'NFL',
-    player: 'Hollis Lane',
+    player: 'Megan Jovon Ruth Pete',
     team: 'Pilots',
     opponent: 'Northstars',
     market: 'Rush Attempts',

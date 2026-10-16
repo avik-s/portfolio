@@ -41,7 +41,7 @@ describe('PrizePicker simulator UI', () => {
       new Event('submit', { bubbles: true, cancelable: true }),
     );
 
-    expect(document.querySelector('#simulator-results').textContent).toContain('Rowan Ellis');
+    expect(document.querySelector('#simulator-results').textContent).toContain('Shéyaa Bin Abraham-Joseph');
     expect(document.querySelector('#simulator-results').textContent).toMatch(/simulated odds/i);
     expect(document.querySelector('#simulator-status').textContent).toMatch(/simulated slips found/i);
   });
