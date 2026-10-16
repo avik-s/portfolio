@@ -40,6 +40,20 @@ describe('PrizePicker slip analyzer', () => {
     expect(result.slips[0].teams).toHaveLength(2);
   });
 
+  test('returns a valid six-pick NBA power slip with unique players', () => {
+    const result = generateSlips(SIMULATED_PROPS, {
+      sport: 'NBA',
+      style: 'Power',
+      size: 6,
+      limit: 1,
+    });
+
+    expect(result.status).toBe('ok');
+    expect(result.slips[0].legs).toHaveLength(6);
+    expect(new Set(result.slips[0].legs.map((leg) => leg.player)).size).toBe(6);
+    expect(new Set(result.slips[0].legs.map((leg) => leg.team)).size).toBeGreaterThanOrEqual(2);
+  });
+
   test('rejects props whose sportsbook and PrizePicks lines differ by more than 0.5', () => {
     const result = generateSlips(SIMULATED_PROPS, {
       sport: 'NBA',
