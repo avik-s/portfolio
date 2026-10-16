@@ -20,7 +20,7 @@ The simulator is deterministic and educational. It uses fictional players and fi
 
 ## Local setup
 
-Requires Node.js 24 or newer.
+Requires Node.js 24 or newer and Python 3 for the local static preview command.
 
 ```bash
 npm ci
