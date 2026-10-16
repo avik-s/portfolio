@@ -5,6 +5,8 @@ export const THRESHOLDS = Object.freeze({
   Flex: Object.freeze({ 3: 57.74, 4: 55.04, 5: 54.26, 6: 54.21 }),
 });
 
+const SUPPORTED_SPORTS = new Set(['NBA', 'NFL']);
+
 export function americanToImpliedProbability(odds) {
   if (!Number.isFinite(odds) || odds === 0) {
     throw new TypeError('American odds must be a non-zero number.');
@@ -31,6 +33,10 @@ function round(value) {
 }
 
 function createCandidate(prop) {
+  if (!prop || !Number.isFinite(prop.prizeLine) || !Number.isFinite(prop.sportsbookLine)) {
+    throw new TypeError('Simulated prop lines must be finite numbers.');
+  }
+
   const fair = removeVig(prop.overOdds, prop.underOdds);
   const lineDifference = Math.abs(prop.sportsbookLine - prop.prizeLine);
   const fairOverPct = fair.over * 100;
@@ -87,24 +93,44 @@ function invalidResult(message, error = message) {
 export function generateSlips(props, options = {}) {
   if (!Array.isArray(props)) return invalidResult('No simulated props were provided.');
 
-  const sport = String(options.sport || 'NBA').toUpperCase();
-  const style = String(options.style || 'Power').replace(/^./, (character) => character.toUpperCase());
-  const size = Number(options.size || 2);
-  const limit = Math.max(1, Number(options.limit || 3));
+  const config = options && typeof options === 'object' ? options : {};
+  const sport = String(config.sport ?? 'NBA').trim().toUpperCase();
+  const styleInput = String(config.style ?? 'Power').trim().toLowerCase();
+  const style = styleInput ? styleInput[0].toUpperCase() + styleInput.slice(1) : '';
+  const size = Number(config.size ?? 2);
+  const limit = Number(config.limit ?? 3);
+
+  if (!SUPPORTED_SPORTS.has(sport)) {
+    return invalidResult(`Unsupported sport: ${sport || 'blank'}.`, 'Unsupported sport configuration.');
+  }
+
+  if (!Number.isInteger(size) || size < 2 || size > 6) {
+    return invalidResult('Pick size must be an integer from 2 through 6.', 'Invalid pick size configuration.');
+  }
+
+  if (!Number.isInteger(limit) || limit < 1) {
+    return invalidResult('Slip limit must be a positive integer.', 'Invalid slip limit configuration.');
+  }
+
   const thresholdPct = THRESHOLDS[style]?.[size];
 
-  if (!thresholdPct) {
+  if (thresholdPct === undefined) {
     return invalidResult(
       `${style} slips do not support a ${size}-pick size.`,
       `Unsupported ${style} size configuration.`,
     );
   }
 
-  const candidates = props
-    .filter((prop) => String(prop.sport).toUpperCase() === sport)
-    .map(createCandidate)
-    .filter(Boolean)
-    .sort((a, b) => b.fairWinPct - a.fairWinPct);
+  let candidates;
+  try {
+    candidates = props
+      .filter((prop) => String(prop?.sport).toUpperCase() === sport)
+      .map(createCandidate)
+      .filter(Boolean)
+      .sort((a, b) => b.fairWinPct - a.fairWinPct);
+  } catch {
+    return invalidResult('One or more simulated props are invalid.', 'Invalid simulated prop data.');
+  }
 
   const validSlips = combinations(candidates, size)
     .filter((legs) => hasUniquePlayers(legs) && hasMultipleTeams(legs))

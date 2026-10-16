@@ -87,4 +87,19 @@ describe('PrizePicker slip analyzer', () => {
     expect(result.slips).toEqual([]);
     expect(result.message).toMatch(/no valid/i);
   });
+
+  test('returns a structured error for unsupported options or malformed props', () => {
+    expect(generateSlips(SIMULATED_PROPS, { sport: 'MLB', style: 'Power', size: 2 }).status).toBe('error');
+    expect(generateSlips(SIMULATED_PROPS, { sport: 'NBA', style: 'Power', size: 0 }).status).toBe('error');
+    expect(() => generateSlips([{ ...SIMULATED_PROPS[0], overOdds: 0 }], {
+      sport: 'NBA',
+      style: 'Power',
+      size: 2,
+    })).not.toThrow();
+    expect(generateSlips([{ ...SIMULATED_PROPS[0], overOdds: 0 }], {
+      sport: 'NBA',
+      style: 'Power',
+      size: 2,
+    }).status).toBe('error');
+  });
 });
