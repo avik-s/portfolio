@@ -248,6 +248,14 @@ ul {
     margin: 0 auto;
 }
 
+.hero-grid--solo {
+    max-width: 780px;
+}
+
+.hero-grid--solo .hero-text {
+    order: initial;
+}
+
 .hero-text {
     text-align: center;
     order: 2;
@@ -282,6 +290,14 @@ ul {
     .hero-text {
         text-align: left;
         order: 1;
+    }
+
+    .hero-grid--solo {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-grid--solo .hero-text {
+        text-align: center;
     }
 
     .hero-image-container {
