@@ -13,7 +13,7 @@ const publicPaths = [
   'contact',
   'datara',
   'prizepicker',
-  'distracted-driver',
+  'robotic-ethernet-insertion',
   'sorting-system',
   'assets',
   'CNAME',

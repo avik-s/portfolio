@@ -14,7 +14,7 @@ describe('static site build', () => {
       'contact/index.html',
       'resume/index.html',
       'datara/index.html',
-      'distracted-driver/index.html',
+      'robotic-ethernet-insertion/index.html',
       'sorting-system/index.html',
       'assets/css/styles.css',
       'assets/js/script.js',
@@ -24,5 +24,6 @@ describe('static site build', () => {
     });
 
     expect(readFileSync('dist/CNAME', 'utf8').trim()).toBe('aviksolanki.com');
+    expect(existsSync('dist/distracted-driver/index.html')).toBe(false);
   });
 });
