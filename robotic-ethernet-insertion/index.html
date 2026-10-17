@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision-Guided Robotic Ethernet Insertion | Avik Solanki</title>
+    <meta name="description"
+        content="Avik Solanki's vision-guided RJ45 insertion system built in NVIDIA Isaac Sim with stereo perception, visual servoing, and PhysX simulation.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .project-content {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--card-shadow);
+        }
+
+        .project-section {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .project-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .feature-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--interactive);
+        }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+            margin-top: 1.25rem;
+        }
+
+        .result-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            background: var(--surface);
+        }
+
+        .result-value {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 1.35rem;
+            color: var(--interactive);
+            margin-bottom: 0.35rem;
+        }
+
+        .result-label {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 700px) {
+            .result-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container navbar-content">
+            <a href="/" class="logo" aria-label="Avik Solanki - Home">Avik Solanki</a>
+            <button type="button" class="hamburger" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/experience" class="nav-link" aria-label="View Experience">Experience</a></li>
+                    <li><a href="/projects" class="nav-link active" aria-label="View Projects">Projects</a></li>
+                    <li><a href="/resume" class="nav-link" aria-label="View Resume">Resume</a></li>
+                    <li><a href="/contact" class="nav-link" aria-label="View Contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container grid-12" style="padding-top: var(--header-height);">
+        <div class="col-main" style="padding-top: var(--spacing-md);">
+            <a href="/projects" class="back-link">← Back to Projects</a>
+
+            <section style="text-align: center; margin-bottom: var(--spacing-lg);">
+                <h1 style="font-size: 3rem; margin-bottom: 0.5rem;">Vision-Guided Robotic Ethernet Insertion</h1>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); font-family: var(--font-sans);">
+                    Autonomous RJ45 insertion in NVIDIA Isaac Sim
+                </p>
+                <div class="tech-stack" style="justify-content: center; margin-top: 1.5rem;">
+                    <span class="tech-tag">Isaac Sim 6.0</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">OpenCV</span>
+                    <span class="tech-tag">YOLOE</span>
+                    <span class="tech-tag">Lula IK</span>
+                    <span class="tech-tag">PhysX</span>
+                </div>
+            </section>
+
+            <div class="project-content fade-in-section">
+                <section class="project-section">
+                    <h2>System overview</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.7;">
+                        This end-to-end manipulation system guides a Franka Panda robot through RJ45 insertion in
+                        NVIDIA Isaac Sim 6.0. Synchronized eye-in-hand RGB stereo cameras provide the visual signal;
+                        YOLOE segmentation, Lula inverse kinematics, and GPU-accelerated PhysX simulation close the
+                        loop from perception to contact.
+                    </p>
+                </section>
+
+                <section class="project-section">
+                    <h2>Stereo perception &amp; port-center estimation</h2>
+                    <ul class="feature-list">
+                        <li>Reconstructs the port's visible RGB front rim from the segmented camera views.</li>
+                        <li>Uses the rim's diagonal intersection to estimate a perspective-correct opening center.</li>
+                        <li>Triangulates the 3D target from the stereo pair without runtime ground truth or tuned XYZ
+                            offsets.</li>
+                    </ul>
+                </section>
+
+                <section class="project-section">
+                    <h2>Visual-servo / kinematic handoff</h2>
+                    <p style="line-height: 1.7;">
+                        A multi-frame stability check locks a world-frame target before the wrist camera becomes
+                        occluded. The controller then hands the target to a kinematic final approach, using bounded
+                        Cartesian motion so the tool can settle without chasing a disappearing visual feature.
+                    </p>
+                </section>
+
+                <section class="project-section">
+                    <h2>Insertion state machine</h2>
+                    <ul class="feature-list">
+                        <li>Separates visual acquisition and final insertion into two explicit control stages.</li>
+                        <li>Uses ToolCenter feedback and quaternion orientation hold to keep the connector aligned.</li>
+                        <li>Checks attachment state before reporting a completed insertion.</li>
+                    </ul>
+                </section>
+
+                <section class="project-section">
+                    <h2>Results</h2>
+                    <p style="line-height: 1.7;">
+                        The verified simulation run completed every commanded insertion while maintaining tight pose
+                        error at the port.
+                    </p>
+                    <div class="result-grid" role="group" aria-label="Verified simulation results">
+                        <div class="result-card">
+                            <span class="result-value">48/48</span>
+                            <span class="result-label">commands completed</span>
+                        </div>
+                        <div class="result-card">
+                            <span class="result-value">9.96 mm</span>
+                            <span class="result-label">insertion depth</span>
+                        </div>
+                        <div class="result-card">
+                            <span class="result-value">0.265 mm</span>
+                            <span class="result-label">lateral drift</span>
+                        </div>
+                        <div class="result-card">
+                            <span class="result-value">0.028°</span>
+                            <span class="result-label">orientation error</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div style="margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+                <a href="/projects" class="back-link">← Back to Projects</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer container grid-12" style="border-top: none;">
+        <div class="col-main"
+            style="border-top: 1px solid var(--border); padding-top: var(--spacing-lg); display: flex; justify-content: space-between; align-items: center;">
+            <p>&copy; 2026 Avik Solanki</p>
+            <div style="display: flex; gap: 1.25rem;">
+                <a href="https://linkedin.com/in/avik-s" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                    style="color: var(--text-secondary); font-size: 1.2rem; transition: color 0.2s;"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/avik-s" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                    style="color: var(--text-secondary); font-size: 1.2rem; transition: color 0.2s;"><i
+                        class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datara AI | Avik Solanki</title>
+    <title>DataraAI | Avik Solanki</title>
     <meta name="description"
-        content="Deep dive into Avik Solanki's work at Datara AI — building a full-stack dataset management platform with React, Flask, Azure, and Cosmos DB.">
+        content="Avik Solanki's work as a Software and Robotics Engineer at DataraAI, building computer-vision ETL pipelines, Azure dataset infrastructure, and Isaac Sim manipulation workflows.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,6 +33,10 @@
             margin-bottom: var(--spacing-lg);
         }
 
+        .project-section:last-child {
+            margin-bottom: 0;
+        }
+
         .feature-list li {
             position: relative;
             padding-left: 1.5rem;
@@ -45,15 +49,6 @@
             position: absolute;
             left: 0;
             color: var(--interactive);
-        }
-
-        code {
-            background: #f4f4f4;
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-family: var(--font-mono);
-            font-size: 0.9em;
-            color: var(--text-primary);
         }
 
         .back-link {
@@ -77,16 +72,16 @@
     <!-- Navigation -->
     <header class="navbar">
         <div class="container navbar-content">
-            <a href="/" class="logo">Avik Solanki</a>
+            <a href="/" class="logo" aria-label="Avik Solanki - Home">Avik Solanki</a>
             <button type="button" class="hamburger" aria-label="Toggle navigation menu">
                 <span></span><span></span><span></span>
             </button>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="/experience" class="nav-link active">Experience</a></li>
-                    <li><a href="/projects" class="nav-link">Projects</a></li>
-                    <li><a href="/resume" class="nav-link">Resume</a></li>
-                    <li><a href="/contact" class="nav-link">Contact</a></li>
+                    <li><a href="/experience" class="nav-link active" aria-label="View Experience">Experience</a></li>
+                    <li><a href="/projects" class="nav-link" aria-label="View Projects">Projects</a></li>
+                    <li><a href="/resume" class="nav-link" aria-label="View Resume">Resume</a></li>
+                    <li><a href="/contact" class="nav-link" aria-label="View Contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -97,97 +92,59 @@
             <a href="/experience" class="back-link">← Back to Experience</a>
 
             <section style="text-align: center; margin-bottom: var(--spacing-lg);">
-                <h1 style="font-size: 3rem; margin-bottom: 0.5rem;">Datara AI</h1>
-                <p style="font-size: 1.2rem; color: var(--text-secondary); font-family: var(--font-sans);">Hierarchical
-                    Dataset Management &amp; Visualization Platform</p>
+                <h1 style="font-size: 3rem; margin-bottom: 0.5rem;">DataraAI</h1>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); font-family: var(--font-sans);">
+                    Software and Robotics Engineer · December 2025 – August 2026
+                </p>
                 <div class="tech-stack" style="justify-content: center; margin-top: 1.5rem;">
-                    <span class="tech-tag">React.js</span>
-                    <span class="tech-tag">Flask</span>
-                    <span class="tech-tag">Azure Blob</span>
-                    <span class="tech-tag">Cosmos DB</span>
+                    <span class="tech-tag">Python</span>
                     <span class="tech-tag">OpenCV</span>
+                    <span class="tech-tag">Azure Blob Storage</span>
+                    <span class="tech-tag">Azure Cosmos DB</span>
+                    <span class="tech-tag">Isaac Sim</span>
                 </div>
             </section>
 
             <div class="project-content fade-in-section">
-
-                <div class="project-section">
+                <section class="project-section">
+                    <h2>Computer-vision ETL</h2>
                     <p style="font-size: 1.1rem; line-height: 1.7;">
-                        Designed and built a full-stack data management platform for computer vision workflows. The
-                        system enables users to upload, organize, and visualize large-scale image datasets
-                        hierarchically (Category > Brand > Dataset), providing a seamless interface for managing assets
-                        stored in Azure Blob Storage and indexed in Cosmos DB.
+                        Built a scalable Python and OpenCV ETL pipeline that ingests video, extracts frame-level
+                        datasets, and supports high-volume computer-vision preprocessing. Configurable frame-tagging
+                        logic automates annotation so teams can move from raw media to model-training iterations with
+                        less manual labeling.
                     </p>
-                </div>
+                </section>
 
-                <div class="project-section">
-                    <h3>Core Key Features</h3>
-
-                    <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">1. Hierarchical
-                        Data Explorer</h4>
+                <section class="project-section">
+                    <h2>Azure dataset infrastructure</h2>
                     <ul class="feature-list">
-                        <li><strong>Dynamic Navigation:</strong> Implemented a file-system-like browser that allows
-                            users to traverse deep directory structures (e.g., <code>automotive/bmw/frontGrille</code>).
-                        </li>
-                        <li><strong>Hybrid View System:</strong> Automatically switches between a "Folder Grid" view for
-                            navigation and an "Image Grid" view for leaf-level dataset inspection.</li>
-                        <li><strong>Breadcrumb Navigation:</strong> Interactive breadcrumbs for quick traversal back up
-                            the hierarchy.</li>
-                        <li><strong>Lazy Loading &amp; Infinite Scroll:</strong> Optimized performance for viewing folders
-                            with thousands of images using virtualization.</li>
+                        <li>Migrated local video and image datasets to Azure Blob Storage for reliable, secure, and
+                            globally accessible object storage.</li>
+                        <li>Integrated Azure Cosmos DB to index pipeline metadata and processing status for organized
+                            retrieval.</li>
+                        <li>Used composite indexes to support efficient organization and lookup as dataset volume
+                            grew.</li>
                     </ul>
+                </section>
 
-                    <h4 style="font-size: 1.1rem; color: var(--text-primary); margin: 1.5rem 0 0.5rem;">2. Dual-Mode
-                        Upload Pipeline</h4>
-                    <ul class="feature-list">
-                        <li><strong>Video Processing:</strong> Built a pipeline that accepts Google Drive video links,
-                            automatically downloads them, extracts frames at specified intervals (FPS), and uploads them
-                            as a new dataset.</li>
-                        <li><strong>Folder Ingestion:</strong> Implemented a "Folder Upload" feature that ingests entire
-                            folders of images from Google Drive, flattens the directory structure, and automatically
-                            standardizes filenames.</li>
-                        <li><strong>Automated Metadata Indexing:</strong> Every upload automatically generates metadata
-                            records in Azure Cosmos DB (timestamps, resolution, file paths, tags).</li>
-                    </ul>
+                <section class="project-section">
+                    <h2>Isaac Sim manipulation workflows</h2>
+                    <p style="line-height: 1.7;">
+                        Developed and tested robotic manipulation workflows in NVIDIA Isaac Sim, combining computer
+                        vision, inverse kinematics, and physics-based simulation for autonomous connector insertion.
+                        The work connected perception and data infrastructure concerns to a concrete robot-control
+                        loop, grounding experiments in repeatable simulated evaluation.
+                    </p>
+                </section>
 
-                    <h4 style="font-size: 1.1rem; color: var(--text-primary); margin: 1.5rem 0 0.5rem;">3. Advanced
-                        UI/UX</h4>
-                    <ul class="feature-list">
-                        <li><strong>Modern Dark Interface:</strong> Designed a premium, dark-themed UI using Tailwind
-                            CSS, featuring glassmorphism effects and hover interactions.</li>
-                        <li><strong>Metadata Overlay:</strong> Interactive sidebar and image overlays that display
-                            critical asset information (UUIDs, dimensions, tags).</li>
-                        <li><strong>Filtering &amp; Tagging:</strong> Built systems to filter datasets by custom tags and
-                            date ranges.</li>
-                    </ul>
-                </div>
-
-                <div class="project-section">
-                    <h3>Tech Stack</h3>
-                    <div class="grid-2" style="gap: 2rem;">
-                        <div>
-                            <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Frontend
-                            </h4>
-                            <ul class="feature-list">
-                                <li><strong>React.js (Vite):</strong> Core framework for a fast, responsive SPA.</li>
-                                <li><strong>Tailwind CSS:</strong> Utility-first styling for rapid custom design.</li>
-                                <li><strong>Lucide React:</strong> Consistent and clean iconography.</li>
-                                <li><strong>React Router:</strong> Handling nested routing for navigation.</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Backend &amp;
-                                Cloud</h4>
-                            <ul class="feature-list">
-                                <li><strong>Python (Flask):</strong> REST API server handling data requests.</li>
-                                <li><strong>Azure Blob Storage:</strong> Scalable object storage for raw images.</li>
-                                <li><strong>Azure Cosmos DB:</strong> NoSQL database for querying metadata.</li>
-                                <li><strong>OpenCV &amp; FFmpeg:</strong> Background scripts for media processing.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
+                <section class="project-section">
+                    <h2>Engineering focus</h2>
+                    <p style="line-height: 1.7;">
+                        The role brought together dependable media ingestion, searchable cloud metadata, and embodied
+                        autonomy: each layer made the next experiment easier to reproduce and inspect.
+                    </p>
+                </section>
             </div>
 
             <div style="margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">

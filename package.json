@@ -7,7 +7,7 @@
     "dev": "python3 -m http.server 4173",
     "check": "npm run lint && npm run validate-html",
     "lint": "eslint assets/js tests scripts",
-    "validate-html": "html-validate --config .htmlvalidate.json index.html experience/index.html projects/index.html resume/index.html contact/index.html datara/index.html prizepicker/index.html distracted-driver/index.html sorting-system/index.html",
+    "validate-html": "html-validate --config .htmlvalidate.json index.html experience/index.html projects/index.html resume/index.html contact/index.html datara/index.html prizepicker/index.html robotic-ethernet-insertion/index.html sorting-system/index.html",
     "test": "vitest run",
     "build": "node scripts/build.mjs"
   },
