@@ -33,6 +33,7 @@ describe('résumé-driven portfolio content', () => {
   test('keeps the homepage hero free of a personal headshot', () => {
     expect(homepage).not.toContain('assets/img/headshot.jpeg');
     expect(homepage).not.toContain('hero-headshot');
+    expect(homepage).toContain('hero-section--solo');
   });
 
   test('uses the updated engineering positioning on the homepage', () => {

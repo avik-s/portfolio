@@ -238,6 +238,10 @@ ul {
     background: transparent;
 }
 
+.hero-section--solo {
+    grid-column: 1 / -1;
+}
+
 .hero-grid {
     display: grid;
     grid-template-columns: 1fr;
