@@ -340,6 +340,11 @@ ul {
     font-weight: 400;
 }
 
+.hero-grid--solo .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .hero-contact {
     display: flex;
     gap: var(--spacing-md);
@@ -532,6 +537,10 @@ ul {
     gap: 1rem;
     margin-top: var(--spacing-sm);
     flex-wrap: wrap;
+}
+
+.hero-grid--solo .hero-cta {
+    justify-content: center;
 }
 
 @media (max-width: 899px) {

@@ -7,6 +7,7 @@ const homepage = readFileSync(new URL('../index.html', import.meta.url), 'utf8')
 const experiencePage = readFileSync(new URL('../experience/index.html', import.meta.url), 'utf8');
 const resumePage = readFileSync(new URL('../resume/index.html', import.meta.url), 'utf8');
 const roboticsPage = readFileSync(new URL('../robotic-ethernet-insertion/index.html', import.meta.url), 'utf8');
+const styles = readFileSync(new URL('../assets/css/styles.css', import.meta.url), 'utf8');
 
 describe('PrizePicker page structure', () => {
   test('exposes the simulator controls and module entrypoint', () => {
@@ -34,6 +35,11 @@ describe('résumé-driven portfolio content', () => {
     expect(homepage).not.toContain('assets/img/headshot.jpeg');
     expect(homepage).not.toContain('hero-headshot');
     expect(homepage).toContain('hero-section--solo');
+  });
+
+  test('centers the solo hero description and action group together', () => {
+    expect(styles).toMatch(/\.hero-grid--solo \.hero-subtitle\s*\{[\s\S]*margin-left:\s*auto;[\s\S]*margin-right:\s*auto;/);
+    expect(styles).toMatch(/\.hero-grid--solo \.hero-cta\s*\{[\s\S]*justify-content:\s*center;/);
   });
 
   test('uses the updated engineering positioning on the homepage', () => {
